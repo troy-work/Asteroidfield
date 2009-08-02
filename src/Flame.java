@@ -34,13 +34,12 @@ public final class Flame {
      * @param y1             #start
      * @param x2             #end
      * @param y2             #end
-     * @param numParticles   #density
      */
-    public void MakeFire(int x1, int y1, int x2, int y2, int numParticles) {
+    public void MakeFire(int x1, int y1, int x2, int y2) {
 
         final Timeline backtimeline = new Timeline();
 
-       for (int i = 0; i < numParticles; i++) {
+       for (int i = 0; i < 1; i++) {
            int size = CoreMath.rand(25, 50);
            int duration = (100 - size) * 10;
            if (duration < 0) {
@@ -49,8 +48,8 @@ public final class Flame {
            int moveDistance = CoreMath.rand(70, 150 - size);
            double moveDirection = 180;//CoreMath.rand(0);
 
-           int startX = x1 + i * (x2 - x1) / numParticles;
-           int startY = y1 + i * (y2 - y1) / numParticles;
+           int startX = x1 + i * (x2 - x1) / 1;
+           int startY = y1 + i * (y2 - y1) / 1;
            int goalX = startX + (int) (moveDistance * Math.cos(moveDirection));
            int goalY = startY + (int) (moveDistance * Math.sin(moveDirection));
 
@@ -70,7 +69,7 @@ public final class Flame {
 
        scene.addTimeline(backtimeline);
 
-       MakeFrontFire(x1, y1, x2, y2, numParticles);
+       MakeFrontFire(x1, y1, x2, y2, 1);
    }
 
    /**

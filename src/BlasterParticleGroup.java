@@ -25,12 +25,11 @@ final public class BlasterParticleGroup extends Group {
     /**
      *
      * @param scene2D #the current scene
-     * @param particleImage #imagename to use
-     * @param imageXSplit #number of images wide
-     * @param imageYSplit #number of images high
+
+
      */
-    public BlasterParticleGroup(Scene2D scene2D, String particleImage, int imageXSplit, int imageYSplit) {
-        images = CoreImage.load(particleImage).split(imageXSplit, imageYSplit);
+    public BlasterParticleGroup(Scene2D scene2D) {
+        images = CoreImage.load("BlasterParticles.png").split(6, 1);
 
         enabled.set(false);
         setBlendMode(BlendMode.Add());
@@ -51,20 +50,19 @@ final public class BlasterParticleGroup extends Group {
      * @param y1 #start
      * @param x2 #end
      * @param y2 #end
-     * @param numParticles #density
      */
-    public void MakeParticles(int x1, int y1, int x2, int y2, int numParticles) {
+    public void MakeParticles(int x1, int y1, int x2, int y2) {
 
         Timeline timeline = new Timeline();
 
-        for (int i = 0; i < numParticles; i++) {
+        for (int i = 0; i < 80; i++) {
             int size = CoreMath.rand(10, 40 - (int)(i*.6));
             int duration = (30) * 6;
             int moveDistance = CoreMath.rand(4,10);
             //double moveDirection = CoreMath.rand(0, 2 * Math.PI);
 
-            int startX = x1 + i * (x2 - x1) / numParticles;
-            int startY = y1 + i * (y2 - y1) / numParticles;
+            int startX = x1 + i * (x2 - x1) / 80;
+            int startY = y1 + i * (y2 - y1) / 80;
             int goalX = startX + (moveDistance);// * Math.cos(moveDirection));
             int goalY = startY + (moveDistance);// * Math.sin(moveDirection));
             //double startAngle = CoreMath.rand(0, .1 * Math.PI);

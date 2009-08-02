@@ -13,15 +13,15 @@ final public class Ground extends ImageSprite {
 
     /**
      *
-     * @param imageAsset #
      * @param x          #
+
      * @param y          #
-     * @param xOff       #
+
      * @param yOff       #
      */
-    public Ground(String imageAsset, int x, int y, int xOff, int yOff) {
-        super(imageAsset, x, y);
-        this.xOff = xOff;
+    public Ground(int x, int y, int yOff) {
+        super("CityLand.png", x, y);
+        this.xOff = 0;
         this.yOff = yOff;
         super.pixelSnapping.set(true);
     }

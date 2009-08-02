@@ -37,13 +37,12 @@ final public class Scout extends ImageSprite {
 
     /**
      *
-     * @param imageAsset
-     * @param x
      * @param y
+
      * @param delay
      */
-    public Scout(String imageAsset, int x, int y, int delay) {
-        super(imageAsset, x, y);
+    public Scout(int y, int delay) {
+        super("Scout1.png", 0, y);
         this.delay = delay;
         pixelSnapping.set(true);
         setPixelLevelChecks(true);
@@ -72,10 +71,10 @@ final public class Scout extends ImageSprite {
             angle.set(scoutPath.getAngle(position) - angleCorrection);
             x.set(x.get() + xOffset);
             if (y.get() > 150 && angle.get() > angleSmall && angle.get() < angleBig) {
-                ((AsteroidField) getScene2D()).Laser(x.getAsInt(), y.getAsInt(), angle.get() + angleCorrection, 8);
+                ((AsteroidField) getScene2D()).Laser(x.getAsInt(), y.getAsInt(), angle.get() + angleCorrection);
 
             }
-            Trail(trailImage, getScene2D(), x.getAsInt(), y.getAsInt(), angle.get() + angleCorrection, 1);
+            Trail(trailImage, getScene2D(), x.getAsInt(), y.getAsInt(), angle.get() + angleCorrection);
             getParent().moveToTop(this);
             if (position >= 1) {
                 getParent().remove(this);
@@ -87,10 +86,10 @@ final public class Scout extends ImageSprite {
 
     }
 
-    private void Trail(CoreImage[] trail, Scene2D s, int x, int y, double angle, int numParticles) {
+    private void Trail(CoreImage[] trail, Scene2D s, int x, int y, double angle) {
 
         final Timeline timeline = new Timeline();
-        for (int i = 0; i < numParticles; i++) {
+        for (int i = 0; i < 1; i++) {
             int duration = 100;
             int moveDistance = rand(0, 2);
             int startX = x - (int) (16 * Math.cos(angle));

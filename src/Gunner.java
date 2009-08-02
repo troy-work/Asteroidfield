@@ -44,9 +44,9 @@ public class Gunner extends ImageSprite {
 
             if (Input.isMousePressed() || Input.isPressed(Input.KEY_SPACE)) {
                 if (invert) {
-                    blast.MakeParticles(x.getAsInt() - (int) (160 * Math.cos(angle.get())), y.getAsInt() - (int) (160 * Math.sin(angle.get())), GetTargetX(), GetTargetY(), 80);
+                    blast.MakeParticles(x.getAsInt() - (int) (160 * Math.cos(angle.get())), y.getAsInt() - (int) (160 * Math.sin(angle.get())), GetTargetX(), GetTargetY());
                 } else {
-                    blast.MakeParticles(x.getAsInt() + (int) (160 * Math.cos(angle.get())), y.getAsInt() + (int) (160 * Math.sin(angle.get())), GetTargetX(), GetTargetY(), 80);
+                    blast.MakeParticles(x.getAsInt() + (int) (160 * Math.cos(angle.get())), y.getAsInt() + (int) (160 * Math.sin(angle.get())), GetTargetX(), GetTargetY());
                 }
             }
         }

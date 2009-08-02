@@ -26,12 +26,12 @@ final public class ParticleGroup extends Group {
     /**
      *
      * @param scene2D #pass the current scene; typcially 'this'
+
      * @param particleImage #image for the particle
-     * @param imageXSplit #number of frames in the width of the image
-     * @param imageYSplit #number of frames in the height of the image
+
      */
-    public ParticleGroup(Scene2D scene2D, String particleImage, int imageXSplit, int imageYSplit) {
-        images = CoreImage.load(particleImage).split(imageXSplit, imageYSplit);
+    public ParticleGroup(Scene2D scene2D, String particleImage) {
+        images = CoreImage.load(particleImage).split(6, 1);
 
         enabled.set(false);
         setBlendMode(BlendMode.Add());

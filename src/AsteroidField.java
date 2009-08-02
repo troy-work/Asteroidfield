@@ -124,7 +124,7 @@ public class AsteroidField extends Scene2D {
         backGround.pixelSnapping.set(true);
         add(backGround);
 
-        Ground cityGround = new Ground("CityLand.png", panX, panY, 0, -40);
+        Ground cityGround = new Ground(panX, panY, -40);
         ground = new Group();
         ground.add(cityGround);
         add(ground);
@@ -149,20 +149,20 @@ public class AsteroidField extends Scene2D {
 
         add(buildings);
 
-        shield = new Shield("Shield.png", panX, panY, 322, 0);
+        shield = new Shield(panX, panY);
         shield.alpha.set(255);
         shield.setAnchor(.5,1);
         add(shield);
 
 
         asteroidSound = Sound.load("asteroid.wav");
-        particleGroup = new ParticleGroup(this, "BrownParticles.png", 6, 1);
+        particleGroup = new ParticleGroup(this, "BrownParticles.png");
         asteroids = new Group();
         add(asteroids);
 
         Sound sound = Sound.load("sound.wav");
         sound.play();
-        blast = new BlasterParticleGroup(this, "BlasterParticles.png", 6, 1);
+        blast = new BlasterParticleGroup(this);
         gunnerRight = new Gunner(gunRight, Stage.getWidth(), Stage.getHeight(), blast);
         gunnerRight.invert = true;
         add(gunnerRight);
@@ -441,11 +441,11 @@ public class AsteroidField extends Scene2D {
             }
 
             if (doScout && !getMainLayer().contains(scout1)) {
-                scout1 = new Scout("Scout1.png", 0, -131, rand(10, 100));
+                scout1 = new Scout(-131, rand(10, 100));
                 add(scout1);
             }
             if (doScout && !getMainLayer().contains(scout2)) {
-                scout2 = new Scout("Scout1.png", 0, -131, rand(10, 100));
+                scout2 = new Scout(-131, rand(10, 100));
                 add(scout2);
             }
             if (shieldHealth >= 50 && scoutLaser.contains(laserSprite)) {
@@ -628,7 +628,7 @@ public class AsteroidField extends Scene2D {
     private void DoScoutLaserToShieldCollision() {
         for (int i = 0; i < scoutLaser.getNumSprites(); i++) {
             if (shield.intersects(scoutLaser.get(i))) {
-                ParticleGroup scoutLaserHit = new ParticleGroup(this, "particles1.png", 6, 1);
+                ParticleGroup scoutLaserHit = new ParticleGroup(this, "particles1.png");
                 scoutLaserHit.MakeParticles(scoutLaser.get(i).x.getAsInt(), scoutLaser.get(i).y.getAsInt(), scoutLaser.get(i).x.getAsInt() - rand(1, 3), scoutLaser.get(i).y.getAsInt() - rand(1, 3), 8);
                 scoutLaser.removeAll();
                 shieldHealth -= 20;
@@ -652,7 +652,7 @@ public class AsteroidField extends Scene2D {
                 building.hit = true;
                 explode.play(new Fixed(.4));
                 DoExplosion(scoutLaser.get(i).x.get(), scoutLaser.get(i).y.get() + 40, "explode.png");
-                ParticleGroup scoutLaserHit = new ParticleGroup(this, "particles1.png", 6, 1);
+                ParticleGroup scoutLaserHit = new ParticleGroup(this, "particles1.png");
                 scoutLaserHit.MakeParticles(scoutLaser.get(i).x.getAsInt(), scoutLaser.get(i).y.getAsInt(), scoutLaser.get(i).x.getAsInt() - rand(1, 3), scoutLaser.get(i).y.getAsInt() - rand(1, 3), 1);
                 scoutLaser.removeAll();
                 buildingBonus = (buildingBonus > 0) ? buildingBonus -= 100 : 0;
@@ -674,7 +674,7 @@ public class AsteroidField extends Scene2D {
 
     private void ManageAsteroids() {
         if (asteroids.getNumSprites() < 4) {
-            FallingAnimatedSprite asteroidSprite = new FallingAnimatedSprite("asteroid.png", true, 0, 0, true, particleGroup);
+            FallingAnimatedSprite asteroidSprite = new FallingAnimatedSprite(particleGroup);
             asteroidSprite.Start();
             asteroidSprite.explosionSound = asteroidSound;
             asteroidSprite.soundLevel.set(0.04, 0);
@@ -715,11 +715,10 @@ public class AsteroidField extends Scene2D {
      * @param x #start
      * @param y #start
      * @param angle #trajectory
-     * @param numParticles #density
      */
-    public void Laser(int x, int y, double angle, int numParticles) {
+    public void Laser(int x, int y, double angle) {
         final Timeline t = new Timeline();
-        for (int i = 0; i < numParticles; i++) {
+        for (int i = 0; i < 8; i++) {
             int duration = 600;
             int moveDistance = CoreMath.rand(100, 300);
             int startX = x + (int) (16 * Math.cos(angle));

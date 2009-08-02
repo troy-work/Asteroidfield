@@ -46,10 +46,10 @@ public class FallingAnimatedSprite extends ImageSprite{
     }
 
 
-    public FallingAnimatedSprite(String image, boolean useRandomRotation, double xPosition, double yPosition, boolean useRandomScaling, ParticleGroup particleGroup) {
-        super(image, xPosition, yPosition);
-        this.useRandomRotation = useRandomRotation;
-        this.useRandomScaling = useRandomScaling;
+    public FallingAnimatedSprite(ParticleGroup particleGroup) {
+        super("asteroid.png", (double) 0, (double) 0);
+        this.useRandomRotation = true;
+        this.useRandomScaling = true;
         this.particleGroup = particleGroup;
         this.pixelSnapping.set(true);
         this.setPixelLevelChecks(true);
@@ -107,15 +107,15 @@ public class FallingAnimatedSprite extends ImageSprite{
             explosionSound.play(soundLevel);
 
         }
-        DoSpriteBreakApart(30, 4);
+        DoSpriteBreakApart();
 
     }
 
-    private void DoSpriteBreakApart(double spread, int qty) {
+    private void DoSpriteBreakApart() {
 
-        for (int i = 1; i <= qty; i++) {
+        for (int i = 1; i <= 4; i++) {
             if (particleGroup != null) {
-                particleGroup.MakeParticles(x.getAsInt(), y.getAsInt(), (int) (x.get() - rand(-spread, spread)), (int) (y.get() + rand(-spread, spread)), 3);
+                particleGroup.MakeParticles(x.getAsInt(), y.getAsInt(), (int) (x.get() - rand(-(double) 30, (double) 30)), (int) (y.get() + rand(-(double) 30, (double) 30)), 3);
             }
         }
 

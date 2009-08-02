@@ -64,7 +64,7 @@ final public class Building extends ImageSprite {
                 int rx = (int) CoreMath.rand(x.get() - 20, x.get() + 20);
                 int ry = (int) CoreMath.rand(y.get(), y.get() - 5);
                 int flameHeight = CoreMath.rand(0, 70);
-                flame.MakeFire(rx, ry, rx, ry - flameHeight, 1);
+                flame.MakeFire(rx, ry, rx, ry - flameHeight);
 				flameFrames = 1;
 			} else {
 				flameFrames-=1;

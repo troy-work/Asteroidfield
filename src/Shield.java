@@ -17,16 +17,16 @@ final public class Shield extends ImageSprite {
 
     /**
      *
-     * @param imageAsset
      * @param x
+
+
      * @param y
-     * @param xOff
-     * @param yOff
+
      */
-    public Shield(String imageAsset, int x, int y, int xOff, int yOff) {
-        super(imageAsset, 0, 0);
-        this.xOff = xOff;
-        this.yOff = yOff;
+    public Shield(int x, int y) {
+        super("Shield.png", 0, 0);
+        this.xOff = 322;
+        this.yOff = 0;
         this.pixelSnapping.set(true);
         this.setPixelLevelChecks(true);
     }
