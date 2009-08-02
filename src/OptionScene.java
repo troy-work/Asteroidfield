@@ -1,14 +1,7 @@
-
-
-import pulpcore.animation.event.SceneChangeEvent;
-import pulpcore.image.CoreFont;
+import pulpcore.Stage;
 import pulpcore.scene.Scene2D;
 import pulpcore.sprite.Button;
-import pulpcore.sprite.Group;
 import pulpcore.sprite.ImageSprite;
-import pulpcore.sprite.Label;
-import pulpcore.sprite.Sprite;
-import pulpcore.Stage;
 
 /**
  *
@@ -23,11 +16,11 @@ public class OptionScene extends Scene2D {
     @Override
     public void load() {
         toggleButton = Button.createLabeledToggleButton("Some Toggle", 320, 300);
-        toggleButton.setAnchor(Sprite.CENTER);
+        toggleButton.setAnchor(.5,.5);
         errorButton = Button.createLabeledToggleButton("Some Error", 320, 350);
-        errorButton.setAnchor(Sprite.CENTER);
+        errorButton.setAnchor(.5,.5);
         backButton = Button.createLabeledButton("<< Back", 320, 400);
-        backButton.setAnchor(Sprite.CENTER);
+        backButton.setAnchor(.5,.5);
         
         add(new ImageSprite("background.png", 0, 0));
         add(toggleButton);
