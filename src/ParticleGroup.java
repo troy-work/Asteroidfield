@@ -20,7 +20,6 @@ import pulpcore.sprite.Sprite;
 final public class ParticleGroup extends Group {
 
     final CoreImage[] images;
-    int lastX, lastY;
     final Scene2D scene;
 
     /**

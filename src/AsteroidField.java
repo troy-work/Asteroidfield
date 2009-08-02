@@ -23,11 +23,8 @@ public class AsteroidField extends Scene2D {
 
     private final boolean fastMachine;
     Group asteroids;
-    Group orbs;
-    Label fps;
     Label info;
     Label info2;
-    Fixed rate;
     final CoreFont font = CoreFont.load("fps.font.png");
     ParticleGroup particleGroup;
     Sound asteroidSound;
@@ -48,7 +45,6 @@ public class AsteroidField extends Scene2D {
     final Fixed photonVolume = new Fixed(.1);
     int gunnerTargetX;
     int gunnerTargetY;
-    Group shieldGroup;
     Shield shield;
     double shieldHealth = 255;
     final Sound shieldHit = Sound.load("shieldHit.wav");
@@ -56,8 +52,7 @@ public class AsteroidField extends Scene2D {
     Building brownHotel;
     Building greenOrbBuilding;
     Building deathStarBuilding;
-    
-    ImageSprite target;
+
     ImageSprite hud;
     final CoreFont points = CoreFont.load("points.font.png");
     private boolean isShot = false;

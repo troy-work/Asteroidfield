@@ -19,7 +19,6 @@ import pulpcore.sprite.Sprite;
 final public class BlasterParticleGroup extends Group {
 
     final CoreImage[] images;
-    int lastX, lastY;
     final Scene2D scene;
 
     /**

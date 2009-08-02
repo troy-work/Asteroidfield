@@ -29,7 +29,6 @@ public class FallingAnimatedSprite extends ImageSprite{
      */
     boolean doCollisionChecking = false;
     boolean die = false;
-    final Group splatter = new Group();
     final ParticleGroup particleGroup;
     Sound explosionSound;
     final Fixed soundLevel = new Fixed();
@@ -151,11 +150,6 @@ public class FallingAnimatedSprite extends ImageSprite{
             RandomScaling();
         }
         SetNormalMotion();
-    }
-
-    public void SetRotationAngle(double angle) {
-        useRandomRotation = false;
-        setRotationDegree(angle);
     }
 
     private boolean IsDone() {
