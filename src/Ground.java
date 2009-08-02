@@ -8,8 +8,8 @@ import pulpcore.sprite.ImageSprite;
  * @author Troy Cox
  */
 final public class Ground extends ImageSprite {
-    int xOff;
-    int yOff;
+    final int xOff;
+    final int yOff;
 
     /**
      *

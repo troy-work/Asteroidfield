@@ -11,9 +11,9 @@ import pulpcore.sprite.ImageSprite;
  * @author Troy Cox
  */
 final public class Shield extends ImageSprite {
-    int xOff;
-    int yOff;
-    Sound die = Sound.load("shieldDie.wav");
+    final int xOff;
+    final int yOff;
+    final Sound die = Sound.load("shieldDie.wav");
 
     /**
      *

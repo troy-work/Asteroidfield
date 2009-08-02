@@ -19,12 +19,12 @@ final public class Scout extends ImageSprite {
 
     private double position = 0;
     //private Path scoutPath2 = new Path("M 38,41 L 38,161 L 162,161 L 162,324");
-    private double xOffset;
-    private double angleCorrection = (90 * (Math.PI / 180));
+    private final double xOffset;
+    private final double angleCorrection = (90 * (Math.PI / 180));
     private Path scoutPath;
-    CoreImage[] trailImage = CoreImage.load("trail.png").split(10, 1);
-    double angleBig = (10 * (Math.PI / 180));
-    double angleSmall = (-10 * (Math.PI / 180));
+    final CoreImage[] trailImage = CoreImage.load("trail.png").split(10, 1);
+    final double angleBig = (10 * (Math.PI / 180));
+    final double angleSmall = (-10 * (Math.PI / 180));
     int delay;
 
     private int GetX() {

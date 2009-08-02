@@ -21,13 +21,13 @@
         TextField textField;
         Button okButton;
         Group form;
-        int totalPoints;
-        Scene2D scene;
+        final int totalPoints;
+        final Scene2D scene;
         FilledSprite scoreBoard;
         Label yourScore;
         Label label;
         Sprite textBackground;
-        private boolean getInput;
+        private final boolean getInput;
 
         /**
          *

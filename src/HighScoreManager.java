@@ -10,8 +10,8 @@ import java.util.Calendar;
  * @author Troy Cox
  */
 public class HighScoreManager {
-    private static int numberOfScores = 500;
-    private static String [] outText = new String[numberOfScores];
+    private static final int numberOfScores = 500;
+    private static final String [] outText = new String[numberOfScores];
 
     /**
      *

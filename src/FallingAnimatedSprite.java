@@ -33,7 +33,7 @@ public class FallingAnimatedSprite extends ImageSprite{
     final ParticleGroup particleGroup;
     Sound explosionSound;
     final Fixed soundLevel = new Fixed();
-    private int fallSpread = 500;
+    private final int fallSpread = 500;
     private int restageOrDie = Stage.getHeight();
     private double xMove;
     private double yMove;

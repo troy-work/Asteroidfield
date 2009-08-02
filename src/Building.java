@@ -13,14 +13,14 @@ import pulpcore.sprite.ImageSprite;
  */
 final public class Building extends ImageSprite {
 
-    int xOff;
-    int yOff;
+    final int xOff;
+    final int yOff;
     boolean hit = false;
     int flameFrames = 0;
     private boolean doAgain = true;
-    private int frame;
-    private int totalFrames;
-    private Flame flame;
+    private final int frame;
+    private final int totalFrames;
+    private final Flame flame;
 
 
     /**

@@ -15,8 +15,8 @@ import pulpcore.sprite.Group;
  */
 public final class Flame {
 
-	private Scene2D scene;
-    private CoreImage[] flame;
+	private final Scene2D scene;
+    private final CoreImage[] flame;
     /**
      *
      * @param scene #current scene

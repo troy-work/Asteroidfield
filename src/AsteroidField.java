@@ -21,14 +21,14 @@ import pulpcore.sprite.*;
  */
 public class AsteroidField extends Scene2D {
 
-    private boolean fastMachine;
+    private final boolean fastMachine;
     Group asteroids;
     Group orbs;
     Label fps;
     Label info;
     Label info2;
     Fixed rate;
-    CoreFont font = CoreFont.load("fps.font.png");
+    final CoreFont font = CoreFont.load("fps.font.png");
     ParticleGroup particleGroup;
     Sound asteroidSound;
 
@@ -38,20 +38,20 @@ public class AsteroidField extends Scene2D {
     int panXOffSet = 0;
     int panYOffSet = 0;
     ImageSprite backGround;
-    private int highestPan = 160;
+    private final int highestPan = 160;
     Gunner gunnerRight;
     Gunner gunnerLeft;
-    CoreImage gunRight = CoreImage.load("Gunner.png");
-    CoreImage gunLeft = gunRight.mirror();
+    final CoreImage gunRight = CoreImage.load("Gunner.png");
+    final CoreImage gunLeft = gunRight.mirror();
     BlasterParticleGroup blast;
     Sound photon;
-    Fixed photonVolume = new Fixed(.1);
+    final Fixed photonVolume = new Fixed(.1);
     int gunnerTargetX;
     int gunnerTargetY;
     Group shieldGroup;
     Shield shield;
     double shieldHealth = 255;
-    Sound shieldHit = Sound.load("shieldHit.wav");
+    final Sound shieldHit = Sound.load("shieldHit.wav");
     Building pinkHotel;
     Building brownHotel;
     Building greenOrbBuilding;
@@ -59,7 +59,7 @@ public class AsteroidField extends Scene2D {
     
     ImageSprite target;
     ImageSprite hud;
-    CoreFont points = CoreFont.load("points.font.png");
+    final CoreFont points = CoreFont.load("points.font.png");
     private boolean isShot = false;
     ImageSprite shot;
     Label displayPoints;
@@ -68,16 +68,16 @@ public class AsteroidField extends Scene2D {
     int shieldBonus = 200;
     int bonus = 0;
     Label displayTotalPoints;
-    CoreFont totalPointsFont = CoreFont.load("totalPoints.font.png");
+    final CoreFont totalPointsFont = CoreFont.load("totalPoints.font.png");
     Label displayBonus;
     private int score = 100;
-    Sound explode = Sound.load("explode.wav");
-    CoreImage[] laser = CoreImage.load("particles1.png").split(6, 1);
+    final Sound explode = Sound.load("explode.wav");
+    final CoreImage[] laser = CoreImage.load("particles1.png").split(6, 1);
     ImageSprite laserSprite = new ImageSprite(laser[1], 0, 0);
-    Group scoutLaser = new Group();
-    Group buildings = new Group();
+    final Group scoutLaser = new Group();
+    final Group buildings = new Group();
     private boolean photonCanPlay = true;
-    Timeline game = new Timeline();
+    final Timeline game = new Timeline();
     private boolean isPaused = false;
     private boolean doAsteroids = false;
     private boolean doScout = false;
@@ -86,11 +86,11 @@ public class AsteroidField extends Scene2D {
     private Label totalText;
     private Label bonusText;
     private boolean doTally = false;
-    Sound scoreSound = Sound.load("score.wav");
+    final Sound scoreSound = Sound.load("score.wav");
     boolean displayingScore = false;
     HighScoreDisplay display;
     Button ok;
-    private Fixed scoreVolume = new Fixed(.1);
+    private final Fixed scoreVolume = new Fixed(.1);
 
     /**
      *
