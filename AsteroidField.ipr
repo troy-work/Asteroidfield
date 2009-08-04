@@ -10,7 +10,6 @@
       <maximumStackSize value="32" />
       <properties />
       <executeOn event="beforeRun" target="build" />
-      <executeOn event="beforeRun" target="build" runConfigurationType="Applet" runConfigurationName="AsteroidField" />
     </buildFile>
   </component>
   <component name="BuildJarProjectSettings">
@@ -225,7 +224,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project:///Users/troycox/IdeaProjects/AsteroidField/AsteroidField.ipr" />
+    <option name="state" value="project://C:\Documents and Settings\Troy Cox\My Documents\InteliJProjects\AsteroidField\AsteroidField.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
