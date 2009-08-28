@@ -6,7 +6,6 @@ import pulpcore.math.CoreMath;
 import pulpcore.scene.Scene2D;
 import pulpcore.sprite.ImageSprite;
 import pulpcore.sprite.Sprite;
-import pulpcore.sprite.Group;
 
 
 /**
@@ -48,8 +47,8 @@ public final class Flame {
            int moveDistance = CoreMath.rand(70, 150 - size);
            double moveDirection = 180;//CoreMath.rand(0);
 
-           int startX = x1 + i * (x2 - x1) / 1;
-           int startY = y1 + i * (y2 - y1) / 1;
+           int startX = x1 + i * (x2 - x1);
+           int startY = y1 + i * (y2 - y1);
            int goalX = startX + (int) (moveDistance * Math.cos(moveDirection));
            int goalY = startY + (int) (moveDistance * Math.sin(moveDirection));
 
